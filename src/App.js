@@ -1,13 +1,18 @@
-/* import logo from './logo.svg'; */
-import './App.css';
-
-function App() {
-  return (
-
-      <h1>Hello World</h1>
-
-    
-  );
+import React from 'react';
+import Parent from './components/Parent';
+import Child from './components/Child';
+let App = () => {
+  return(
+    <>
+      <h1>App Component</h1>
+      <Parent/>
+      <Child/>
+    </>
+  )
 }
 
+
+
 export default App;
+
+
