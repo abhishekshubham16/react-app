@@ -10,6 +10,9 @@ let App = () => {
   const[bg, setbg]=useState(red);
   const[name, setname] = useState('click me');
 
+  const[namee, setName] = useState("");
+  const[fullname, setfullname] = useState();
+
   const updateTime = () =>{
     newTime = new Date().toLocaleTimeString();
     setTime(newTime);
@@ -27,6 +30,14 @@ let App = () => {
     setbg(red);
     setname('Change!:')
   }
+
+  const InputEvent = (event) => {
+    setName(event.target.value);
+  }
+
+  const onsubmit =()=> {
+    setfullname(namee)
+  }
   return(
     <>
       <Parent/>
@@ -35,6 +46,11 @@ let App = () => {
       {/* <button onClick={updateTime}>get time</button> */}
       <div style={{backgroundColor : bg}}>
         <button onClick={bgchange} onDoubleClick={bgback}> {name} </button>
+      </div>
+      <div>
+        <h1>Hello {fullname}</h1>
+        <input type='text' placeholder='Enter your name' onChange={InputEvent} value={namee}></input>
+        <button onClick={onsubmit}>Click Me</button>
       </div>
     </>
   )
